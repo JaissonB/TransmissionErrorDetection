@@ -22,10 +22,12 @@ inputWordTwo.addEventListener('keyup', function () {
 
 inputWordOne.addEventListener('blur', function () {
     inputWordSum.value = sumWords(parseInt(inputWordOne.value, 2), parseInt(inputWordTwo.value, 2));
+    inputWordOne.value = defineNumberWithHeightBits(inputWordOne.value);
 })
 
 inputWordTwo.addEventListener('blur', function () {
     inputWordSum.value = sumWords(parseInt(inputWordOne.value, 2), parseInt(inputWordTwo.value, 2));
+    inputWordTwo.value = defineNumberWithHeightBits(inputWordTwo.value);
 })
 
 buttonToTransmit.addEventListener('click', function () {
