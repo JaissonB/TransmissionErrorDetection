@@ -28,43 +28,53 @@
                     <input id="wordSum" readonly/>
                 </div>
                 <div class="div-checkboxs">
-                    <label for=""></label>
-                    <input type="radio"/>
-                    <label for=""></label>
-                    <input type="radio"/>
-                    <label for=""></label>
-                    <input type="radio"/>
+                    <span>Transmitir:</span>
+                    <div>
+                        <div class="div-radio-label">
+                            <input id="radioTransmissionCorrect" class="optionStatus" type="radio" name="transmissioStatus" onchange="setTransmissionStatus()"/>
+                            <label for="radioTransmissionCorrect">Corretamente</label>
+                        </div>
+                        <div class="div-radio-label">
+                            <input id="radioTransmissionInorrect" class="optionStatus" type="radio" name="transmissioStatus" onchange="setTransmissionStatus()"/>
+                            <label for="radioTransmissionInorrect">Incorretamente</label>
+                        </div>
+                        <div class="div-radio-label">
+                            <input id="radioTransmissionRandom" class="optionStatus" type="radio" name="transmissioStatus" onchange="setTransmissionStatus()" checked/>
+                            <label for="radioTransmissionRandom">Aleatório</label>
+                        </div>
+                    </div>
                 </div>
-                <button>Transmitir</button>
+                <button id="toTransmit">Transmitir</button>
             </div>
             <div class="div-info-transmission">
+                <h2>Conteúdo da transmissão:</h2>
                 <div class="div-input-label">
-                    <label for="wordOne">Primeira palavra</label>
-                    <input id="wordOne" maxlength="8"/>
+                    <label for="wordOneTransmited">Primeira palavra</label>
+                    <input id="wordOneTransmited" maxlength="8" readonly/>
                 </div>
                 <div class="div-input-label">
-                    <label for="wordTwo">Segunda palavra</label>
-                    <input id="wordTwo" maxlength="8"/>
+                    <label for="wordTwoTransmited">Segunda palavra</label>
+                    <input id="wordTwoTransmited" maxlength="8" readonly/>
                 </div>
                 <div class="div-input-label">
-                    <label for="wordSum">Soma das palavras</label>
-                    <input id="wordSum" readonly/>
+                    <label for="wordSumInverted">Soma das palavras invertida</label>
+                    <input id="wordSumInverted" readonly/>
                 </div>
             </div>
             <div class="div-words-receiver">
                 <div class="div-input-label">
-                    <label for="wordOne">Primeira palavra</label>
-                    <input id="wordOne" maxlength="8"/>
+                    <label for="wordSumInverted2">Soma das palavras invertida</label>
+                    <input id="wordSumInverted2" readonly/>
                 </div>
                 <div class="div-input-label">
-                    <label for="wordTwo">Segunda palavra</label>
-                    <input id="wordTwo" maxlength="8"/>
+                    <label for="wordSumReceived">Soma das palavras recebidas</label>
+                    <input id="wordSumReceived" readonly/>
                 </div>
                 <div class="div-input-label">
-                    <label for="wordSum">Soma das palavras</label>
-                    <input id="wordSum" readonly/>
+                    <label for="wordResult">Resultado</label>
+                    <input id="wordResult" readonly/>
+                    <span class="resultTransmission"></span>
                 </div>
-                <button>Transmitir</button>
             </div>
         </div>
     </main>
