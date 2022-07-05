@@ -33,21 +33,26 @@ inputWordTwo.addEventListener('blur', function () {
 buttonToTransmit.addEventListener('click', function () {
     let whatWordIncorret;
     let numOfError = Math.floor(Math.random() * 7) + 1;
+    
+    inputWordSumInverted.value = invertSum(document.getElementById('wordSum').value);
+    inputWordSumInverted2.value = inputWordSumInverted.value;
+
     if (transmissionCorrect) {
         inputWordOneTransmited.value = inputWordOne.value;
         inputWordTwoTransmited.value = inputWordTwo.value;
     } else if (!transmissionCorrect) {
-        whatWordIncorret = Math.round(Math.random());
+        whatWordIncorret = Math.floor(Math.random()*3);
         if (!whatWordIncorret) {
+            inputWordSumInverted.value = sumWords(parseInt(inputWordSumInverted.value, 2), numOfError);
+            inputWordSumInverted2.value = inputWordSumInverted.value;
+        } else if (whatWordIncorret === 1) {
             inputWordOneTransmited.value = sumWords(parseInt(inputWordOne.value, 2), numOfError);
             inputWordTwoTransmited.value = inputWordTwo.value;
-        } else {
+        } else if (whatWordIncorret === 2) {
             inputWordOneTransmited.value = inputWordOne.value;
             inputWordTwoTransmited.value = sumWords(parseInt(inputWordTwo.value, 2), numOfError);
         }
     }
-    inputWordSumInverted.value = invertSum(document.getElementById('wordSum').value);
-    inputWordSumInverted2.value = inputWordSumInverted.value;
     
     inputWordSumReceived.value = sumWords(parseInt(inputWordOneTransmited.value, 2), parseInt(inputWordTwoTransmited.value, 2));
     inputWordResult.value = sumWords(parseInt(inputWordSumInverted2.value, 2), parseInt(inputWordSumReceived.value, 2));
